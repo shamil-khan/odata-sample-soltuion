@@ -19,13 +19,13 @@ namespace BookService.Controllers
             }
         }
 
-        [EnableQuery(PageSize = 10, MaxExpansionDepth = 2)]
+        [EnableQuery]
         public IHttpActionResult Get()
         {
             return Ok(Books);
         }
 
-        [EnableQuery(PageSize = 10, MaxExpansionDepth = 2)]
+        [EnableQuery]
         public Task<IHttpActionResult> Get([FromODataUri] int key)
         {
             var selectedBooks =
